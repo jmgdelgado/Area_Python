@@ -1,7 +1,7 @@
 from gpiozero import LightSensor, LED
 import time
 
-ldr = LightSensor(18)
+ldr = LightSensor(6)
 
 led = LED(21)
 

@@ -5,7 +5,7 @@ import Adafruit_DHT
 #import sys
 
 # Sensor: Photoresistor
-ldr = LightSensor(18)
+ldr = LightSensor(6)
 
 print('Sensor: Photoresistor GL5516')
 print('   Intensidad luminica = {0:0.2f} %'.format(ldr.value))

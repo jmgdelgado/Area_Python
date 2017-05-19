@@ -10,7 +10,7 @@ import json
 import time 
 
 # Sensor: Photoresistor
-ldr = LightSensor(18)    # Photoresistor in pin 18
+ldr = LightSensor(6)    # Photoresistor in pin 6
 
 print('Sensor: Photoresistor GL5516')
 print('   Intensidad luminica = {0:0.2f} %'.format(ldr.value))
