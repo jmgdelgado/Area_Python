@@ -1,0 +1,35 @@
+#Inicializar git
+git config --global user.name "nombre_usuario"
+git config --global user.email "email_id"
+
+#Creación de un repositorio local
+#Lo primero es crear una carpeta en tu computadora, que servirá como un repositorio local. Para ello, basta ejecutar el siguiente comando:
+git init MiCarpeta
+
+#Si se crea el repositorio con éxito, aparecerá una línea similar a la siguiente:
+
+#Initialized empty Git repository in /home/tu_usuario/MiCarpeta/.git/
+#Acto seguido, hay que entrar a la carpeta MiCarpeta:
+cd MiCarpeta
+
+#Creación de un repositorio en GitHub
+
+#El nombre del repositorio debe ser el mismo que el repositorio del sistema local. 
+#En este caso, será “MiCarpeta”. Para ello, antes que nada, hay que iniciar sesión en Github. 
+#Luego, hay que hacer clic en el signo más (+) en la esquina superior derecha de la página 
+#y seleccionar la opción “crear nuevo repositorio”. 
+#Finalmente, hay que rellenar los datos y hacer clic en el botón “crear repositorio”.
+
+#Una vez hecho esto se creará el repositorio y será posible subir el contenido del repositorio local 
+#en el repositorio GitHub. Para conectarse al repositorio remoto en GitHub hay que ejecutar el comando:
+git remote add origin https://github.com/user_name/MiCarpeta.git
+
+# Subir los cambios de local al remoto en GitHub
+git add .
+git commit -m "descripcion de los cambios"
+git push origin master
+
+
+#Bajar los cambios hechos en GitHub al local
+git pull
+
