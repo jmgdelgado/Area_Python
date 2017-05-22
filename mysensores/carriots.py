@@ -33,7 +33,8 @@ def getDataCarriots(max):     # Creo una funcion para hacer GET del DISPOSITIVO
 
     return  f  
 
-def postDataCarriots(hr,temp, light):      # Creo una funcion para hacer POST al DISPOSITIVO
+## def postDataCarriots(hr,temp, light):      # Creo una funcion para hacer POST al DISPOSITIVO
+def postDataCarriots(datos):      # Creo una funcion para hacer POST al DISPOSITIVO    
 
     #Obtenemos la hora del sistema
     timestamp = int(time.time())
@@ -42,7 +43,8 @@ def postDataCarriots(hr,temp, light):      # Creo una funcion para hacer POST al
     post_params = {"protocol" : "v2",
           "device": device,
           "at" : int(time.mktime(datetime.datetime.utcnow().timetuple())),
-          "data" : {"temp":temp,"hum":hr, "light":light}}
+          "data" : datos}         
+          ##"data" : {"temp":temp,"hum":hr, "light":light}}
     post_bData = json.dumps(post_params).encode('ascii')
 
     #Cabeceras 
