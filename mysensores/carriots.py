@@ -58,3 +58,7 @@ def postDataCarriots(datos):      # Creo una funcion para hacer POST al DISPOSIT
     f = urllib.request.urlopen(req)
    
     return f
+
+
+if __name__ == '__main__':
+    getDataCarriots(1)  
