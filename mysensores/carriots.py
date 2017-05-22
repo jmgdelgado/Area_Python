@@ -20,7 +20,7 @@ def getDataCarriots(max):     # Creo una funcion para hacer GET del DISPOSITIVO
     get_params = {'order':-1}   #orden inverso, primero los nuevos 
     get_bData = json.dumps(get_params).encode('ascii')
     #Cabeceras
-    get_header = {"User-Agent": "***MIId. Developer:***",
+    get_header = {"User-Agent": "raspberrycarriots",
           "Content-Type": "application/json",
           "carriots.apikey": api_key}
 
