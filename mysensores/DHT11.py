@@ -18,8 +18,44 @@ pin_datos = 4     # Pin donde se conecta a la rasberry para recibir los datos, e
 # El pin VCC del sensor se conecta al 3.3V de la rasberry. Tambien se puede conectar al de 5V.
 # El pin GND del sensor se conecta a tierra
 
-while True:
-    humidity, temperature = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)
 
-    print ('Temp: {0:0.1f} C Humidity: {1:0.1f} %'.format(temperature,humidity))
+def temperature (pin_datos):     # Creo una funcion para obtener la temperatura
+    # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
+    t = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)      
+     # Si tengo resultado
+    if t :      
+        result = t[1]
+    else:
+        print('Oooops, Error en la lectura. Intentando de nuevo!')
+    return  result      # devuelvo la lectura
+
+
+def humidity (pin_datos):        # Creo una funcion para obtener la humedad 
+    # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
+    hr = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)     
+    # Si tengo resultado
+    if hr :      
+        result = hr[0]
+    else:
+        print('Oooops, Error en la lectura. Intentando de nuevo!')
+    return  result      # devuelvo la lectura
+
+
+def datos (pin_datos):        # Creo una funcion para obtener la humedad 
+    # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
+    dat = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)     
+    # Si tengo resultado
+    if hr :      
+        result = dat
+    else:
+        print('Oooops, Error en la lectura. Intentando de nuevo!')
+    return  result      # devuelvo la lectura
+
+if __name__ == '__main__':
+    pin_datos = 4 
+
+    while True:
+        humidity, temperature = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)
+
+        print ('Temp: {0:0.1f} C Humidity: {1:0.1f} %'.format(temperature,humidity))
     
