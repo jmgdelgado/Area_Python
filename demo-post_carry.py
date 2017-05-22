@@ -14,7 +14,8 @@ params = {"protocol":"v2",
 hr = 60
 temp = 24
 l = 0.34
-f = carriots.postDataCarriots(hr,temp,l)
+datos = {"temp":temp,"hum":hr,"light":l}
+f = carriots.postDataCarriots(datos)
 
 #Print in a pretty way
 data=json.loads(f.read().decode('utf-8'))
