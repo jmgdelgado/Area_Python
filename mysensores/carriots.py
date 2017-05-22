@@ -7,11 +7,12 @@ import json
 import time, datetime
 
 # ---  DEFINO VARIABLES ---
+device = "RPI1@jmg4carriots.jmg4carriots" # Replace with the "id_developer" of your devic
 ## get_api_url = "http://api.carriots.com/streams/?device=***MIId. Developer:***
-get_api_url = "https://api.carriots.com/devices/RPI1@jmg4carriots.jmg4carriots/streams/"  ##?order=-1
+get_api_url = "https://api.carriots.com/devices/" + device + "/streams/"  ##?order=-1
 api_key = "eca83189ebe6f566b328949ad9fd47d857f31c82c197a190f9c9fd38464c9c66"
 post_api_url= "http://api.carriots.com/streams"
-device = "RPI1@jmg4carriots.jmg4carriots" # Replace with the "id_developer" of your devic
+
 
 
 def getDataCarriots(max):     # Creo una funcion para hacer GET del DISPOSITIVO
@@ -47,7 +48,7 @@ def postDataCarriots(hr,temp, light):      # Creo una funcion para hacer POST al
     #Cabeceras 
     post_header = {
           "Accept": "application/json",
-          "User-Agent": "***MIId. Developer:***",
+          "User-Agent": "raspberrycarriots",
           "Content-Type": "application/vnd.carriots.api.v2+json",
           "carriots.apikey": api_key}
     #LLamada
