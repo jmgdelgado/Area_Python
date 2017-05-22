@@ -45,7 +45,7 @@ def datos_temp_hum (pin_datos):        # Creo una funcion para obtener la humeda
     # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
     dat = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)     
     # Si tengo resultado
-    if hr :      
+    if dat :      
         result = dat
     else:
         print('Oooops, Error en la lectura. Intentando de nuevo!')
