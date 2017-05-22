@@ -41,7 +41,7 @@ def humidity (pin_datos):        # Creo una funcion para obtener la humedad
     return  result      # devuelvo la lectura
 
 
-def datos (pin_datos):        # Creo una funcion para obtener la humedad 
+def datos_temp_hum (pin_datos):        # Creo una funcion para obtener la humedad 
     # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
     dat = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)     
     # Si tengo resultado
@@ -51,11 +51,13 @@ def datos (pin_datos):        # Creo una funcion para obtener la humedad
         print('Oooops, Error en la lectura. Intentando de nuevo!')
     return  result      # devuelvo la lectura
 
+
 if __name__ == '__main__':
     pin_datos = 4 
 
     while True:
-        humidity, temperature = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)
+        ## humidity, temperature = Adafruit_DHT.read_retry(tipo_sensor,pin_datos)
+        humidity, temperature = datos_temp_hum(4)
 
         print ('Temp: {0:0.1f} C Humidity: {1:0.1f} %'.format(temperature,humidity))
     
