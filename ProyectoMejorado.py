@@ -6,6 +6,7 @@ import Adafruit_DHT                      # Library for temperature humiditi sens
 import json
 import time 
 from mysensores import carriots
+from mysensores import DHT11
 
 # Sensor: Photoresistor
 ldr = LightSensor(6)    # Photoresistor in pin 6
@@ -30,14 +31,16 @@ bmp_press = sensor.read_pressure()
 bmp_alt = sensor.read_altitude()
 
 # Sensor: DHT11
-humidity, temperature = Adafruit_DHT.read_retry(11,4)
+## humidity, temperature = Adafruit_DHT.read_retry(11,4)
+pin_dht = 4
+dht_humid = DHT11.humidity(pin_dht)
+dht_temp = DHT11.temperature(pin_dht)
+
 print ('Sensor: DHT11')
-print ('   Temp: {0:0.1f} C '.format(temperature))
-print ('   Humidity: {0:0.1f} %'.format(humidity))
+print ('   Temp: {0:0.1f} C '.format(dht_temp))
+print ('   Humidity: {0:0.1f} %'.format(dht_humid))
 #print ('Temp: {0:0.1f} C Humidity: {1:0.1f} %'.format(temperature,humidity))
-# Obteniendo los datos en la variables para enviar a Carriots
-dht_temp = temperature
-dht_humid = humidity
+
 
 # Sensor: Sensor de lluvia. Rain sensor
 GPIO.setmode(GPIO.BCM)
