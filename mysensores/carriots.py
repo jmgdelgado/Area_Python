@@ -61,4 +61,6 @@ def postDataCarriots(datos):      # Creo una funcion para hacer POST al DISPOSIT
 
 
 if __name__ == '__main__':
-    getDataCarriots(1)  
+    f = getDataCarriots(1)  
+    data=json.loads(f.read().decode('utf-8'))
+    print(json.dumps(data,indent=4,sort_keys=True))
