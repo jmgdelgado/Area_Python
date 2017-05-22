@@ -7,10 +7,12 @@ import json
 import time, datetime
 
 # ---  DEFINO VARIABLES ---
-get_api_url = "http://api.carriots.com/streams/?device=***MIId. Developer:***
-api_key = "***MIAPIKEY***"
+## get_api_url = "http://api.carriots.com/streams/?device=***MIId. Developer:***
+get_api_url = "https://api.carriots.com/devices/RPI1@jmg4carriots.jmg4carriots/streams/"  ##?order=-1
+api_key = "eca83189ebe6f566b328949ad9fd47d857f31c82c197a190f9c9fd38464c9c66"
 post_api_url= "http://api.carriots.com/streams"
-device = "***MIDISPOSITIVO***"
+device = "RPI1@jmg4carriots.jmg4carriots" # Replace with the "id_developer" of your devic
+
 
 def getDataCarriots(max):     # Creo una funcion para hacer GET del DISPOSITIVO
     #Parametros
