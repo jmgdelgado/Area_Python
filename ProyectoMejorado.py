@@ -31,10 +31,10 @@ bmp_press = sensor.read_pressure()
 bmp_alt = sensor.read_altitude()
 
 # Sensor: DHT11
-## humidity, temperature = Adafruit_DHT.read_retry(11,4)
 pin_dht = 4
-dht_humid = DHT11.humidity(pin_dht)
-dht_temp = DHT11.temperature(pin_dht)
+# dht_humid = DHT11.humidity(pin_dht)
+# dht_temp = DHT11.temperature(pin_dht)
+dht_humid,dht_temp = DHT11.datos_hum_temp(pin_dht)
 
 print ('Sensor: DHT11')
 print ('   Temp: {0:0.1f} C '.format(dht_temp))
