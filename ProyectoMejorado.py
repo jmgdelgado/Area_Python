@@ -1,8 +1,6 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO                  # Import GPIO library
 from gpiozero import LightSensor, LED    # Import gpiozero library
-# import Adafruit_BMP.BMP085 as BMP085     # Import library for Barometric sensor
-# import Adafruit_DHT                      # Library for temperature humiditi sensor
 import json
 import time 
 from mysensores import carriots         # Funciones para enviar y obtener datos de Carriots (almacenamiento Cloud)
@@ -18,14 +16,11 @@ print('   Intensidad luminica = {0:0.2f} %'.format(ldr.value))
 photores = ldr.value
 
 # Sensor: BMP180 
-# sensor = BMP085.BMP085()
-
 # Obteniendo los datos en la variables para enviar a Carriots
 bmp_temp = BMP180.temperatura()
 bmp_press = BMP180.presion()
 bmp_alt = BMP180.altitud()
 bmp_sl_press = BMP180.presion_nivel_mar()
-
 
 print ('Sensor: BMP180')
 print ('   Temp = {0:0.2f} *C'.format(bmp_temp))
@@ -33,10 +28,6 @@ print ('   Presion = {0:0.2f} Pa'.format(bmp_press))
 print ('   Altitud = {0:0.2f} *C'.format(bmp_alt))
 print ('   Sealevel Pressure = {0:0.2f} *C'.format(bmp_sl_press))
 
-# Obteniendo los datos en la variables para enviar a Carriots
-# bmp_temp = sensor.read_temperature()
-# bmp_press = sensor.read_pressure()
-# bmp_alt = sensor.read_altitude()
 
 # Sensor: DHT11
 pin_dht = 4
