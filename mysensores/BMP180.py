@@ -23,7 +23,7 @@ import Adafruit_BMP.BMP085 as BMP085
 
 sensor = BMP085.BMP085()
 
-def temperatura:     # Creo una funcion para obtener la temperatura
+def temperatura():     # Creo una funcion para obtener la temperatura
     # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
     t = sensor.read_temperature()     
      # Si tengo resultado
@@ -33,7 +33,7 @@ def temperatura:     # Creo una funcion para obtener la temperatura
         print('Oooops, Error en la lectura. Intentando de nuevo!')
     return  result      # devuelvo la lectura
   
-def presion:     # Creo una funcion para obtener la temperatura
+def presion():     # Creo una funcion para obtener la temperatura
     # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
     t = sensor.read_pressure()     
      # Si tengo resultado
@@ -43,7 +43,7 @@ def presion:     # Creo una funcion para obtener la temperatura
         print('Oooops, Error en la lectura. Intentando de nuevo!')
     return  result      # devuelvo la lectura 
   
-def altitud:     # Creo una funcion para obtener la temperatura
+def altitud():     # Creo una funcion para obtener la temperatura
     # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
     t = sensor.read_altitude()     
      # Si tengo resultado
@@ -53,7 +53,7 @@ def altitud:     # Creo una funcion para obtener la temperatura
         print('Oooops, Error en la lectura. Intentando de nuevo!')
     return  result      # devuelvo la lectura   
   
-def presion_nivel_mar:     # Creo una funcion para obtener la temperatura
+def presion_nivel_mar():     # Creo una funcion para obtener la temperatura
     # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
     t = sensor.read_sealevel_pressure()     
      # Si tengo resultado
