@@ -1,12 +1,12 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO                  # Import GPIO library
-# from gpiozero import LightSensor, LED    # Import gpiozero library
 import json
 import time 
 from mysensores import carriots         # Funciones para enviar y obtener datos de Carriots (almacenamiento Cloud)
 from mysensores import DHT11            # Sensor de temperatura y humedad DHT11
 from mysensores import BMP180           # Sensor barometrico BMP180, obtiene temperatura, presion y altitud
 from mysensores import photoresistorGL5516  # Photoresistor para saber la intensidad luminica
+from mysensores import sensorLluvia     # Sensor de lluvia, devuelve si llueve o no
 
 # Sensor: Photoresistor
 pin_photosensor = 6    # Photoresistor in pin 6
@@ -15,8 +15,7 @@ photores = photoresistorGL5516.luminosidad(pin_photosensor)
 
 print('Sensor: Photoresistor GL5516')
 print('   Intensidad luminica = {0:0.2f} %'.format(photores))
-# Obteniendo los datos en la variables para enviar a Carriots
-# photores = ldr.value
+
 
 # Sensor: BMP180 
 # Obteniendo los datos en la variables para enviar a Carriots
@@ -45,11 +44,11 @@ print ('   Humidity: {0:0.1f} %'.format(dht_humid))
 
 
 # Sensor: Sensor de lluvia. Rain sensor
-GPIO.setmode(GPIO.BCM)
+# GPIO.setmode(GPIO.BCM)
 entrada_sensor = 12
-GPIO.setup(entrada_sensor,GPIO.IN)
+# GPIO.setup(entrada_sensor,GPIO.IN)
 
-input_state = GPIO.input(entrada_sensor)
+input_state = sensorLluvia(entrada_sensor)
 if input_state == False:
         estado_lluvia = 'Lluvia'
 else:
