@@ -24,10 +24,9 @@ def luminosidad (pin_datos):        # Creo una funcion para obtener la intensida
 
 if __name__ == '__main__':
   # Sensor: Photoresistor
-  # ldr = LightSensor(6)    # Photoresistor in pin 6
+  ldr = LightSensor(6)    # Photoresistor in pin 6
   print('Sensor: Photoresistor GL5516')
-  #print('   Intensidad luminica = {0:0.2f} %'.format(ldr.value))
+  print('   Intensidad luminica = {0:0.2f} %'.format(ldr.value))
   
-  print('   Intensidad luminica = {0:0.2f} %'.format(luminosidad(6)))
 
   
