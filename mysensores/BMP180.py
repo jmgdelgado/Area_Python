@@ -23,7 +23,49 @@ import Adafruit_BMP.BMP085 as BMP085
 
 sensor = BMP085.BMP085()
 
-print ('Temp = {0:0.2f} *C'.format(sensor.read_temperature()))
-print ('Presion = {0:0.2f} Pa'.format(sensor.read_pressure()))
-print ('Altitud = {0:0.2f} *C'.format(sensor.read_altitude()))
-print ('Sealevel Pressure = {0:0.2f} *C'.format(sensor.read_sealevel_pressure()))
+def temperatura:     # Creo una funcion para obtener la temperatura
+    # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
+    t = sensor.read_temperature()     
+     # Si tengo resultado
+    if t :      
+        result = t
+    else:
+        print('Oooops, Error en la lectura. Intentando de nuevo!')
+    return  result      # devuelvo la lectura
+  
+def presion:     # Creo una funcion para obtener la temperatura
+    # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
+    t = sensor.read_pressure()     
+     # Si tengo resultado
+    if t :      
+        result = t
+    else:
+        print('Oooops, Error en la lectura. Intentando de nuevo!')
+    return  result      # devuelvo la lectura 
+  
+def altitud:     # Creo una funcion para obtener la temperatura
+    # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
+    t = sensor.read_altitude()     
+     # Si tengo resultado
+    if t :      
+        result = t
+    else:
+        print('Oooops, Error en la lectura. Intentando de nuevo!')
+    return  result      # devuelvo la lectura   
+  
+def presion_nivel_mar:     # Creo una funcion para obtener la temperatura
+    # llamando a mi funcion DHT_11_timer pasandole como parametros el sensor y el pin
+    t = sensor.read_sealevel_pressure()     
+     # Si tengo resultado
+    if t :      
+        result = t
+    else:
+        print('Oooops, Error en la lectura. Intentando de nuevo!')
+    return  result      # devuelvo la lectura     
+
+
+if __name__ == '__main__':
+  print ('Temp = {0:0.2f} *C'.format(sensor.read_temperature()))
+  print ('Presion = {0:0.2f} Pa'.format(sensor.read_pressure()))
+  print ('Altitud = {0:0.2f} *C'.format(sensor.read_altitude()))
+  print ('Sealevel Pressure = {0:0.2f} *C'.format(sensor.read_sealevel_pressure()))
