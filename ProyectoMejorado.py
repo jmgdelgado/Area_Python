@@ -48,7 +48,7 @@ print ('   Humidity: {0:0.1f} %'.format(dht_humid))
 entrada_sensor = 12
 # GPIO.setup(entrada_sensor,GPIO.IN)
 
-input_state = sensorLluvia(entrada_sensor)
+input_state = sensorLluvia.llueve(entrada_sensor)
 if input_state == False:
         estado_lluvia = 'Lluvia'
 else:
