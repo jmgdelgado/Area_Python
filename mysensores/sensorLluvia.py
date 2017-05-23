@@ -15,7 +15,7 @@ def llueve (pin_datos):        # Creo una funcion para obtener la intensidad lum
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin_datos,GPIO.IN)
     
-    input_state = GPIO.input(entrada_sensor) 
+    input_state = GPIO.input(pin_datos) 
     result = input_state
  
     return  result      # devuelvo la lectura
