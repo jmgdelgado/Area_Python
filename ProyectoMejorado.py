@@ -1,19 +1,22 @@
 #!/usr/bin/python
 import RPi.GPIO as GPIO                  # Import GPIO library
-from gpiozero import LightSensor, LED    # Import gpiozero library
+# from gpiozero import LightSensor, LED    # Import gpiozero library
 import json
 import time 
 from mysensores import carriots         # Funciones para enviar y obtener datos de Carriots (almacenamiento Cloud)
 from mysensores import DHT11            # Sensor de temperatura y humedad DHT11
 from mysensores import BMP180           # Sensor barometrico BMP180, obtiene temperatura, presion y altitud
+from mysensores import photoresistorGL5516  # Photoresistor para saber la intensidad luminica
 
 # Sensor: Photoresistor
-ldr = LightSensor(6)    # Photoresistor in pin 6
+pin_photosensor = 6    # Photoresistor in pin 6
+# Obteniendo los datos en la variables para enviar a Carriots
+photores = photoresistorGL5516.luminosidad(pin_photosensor)
 
 print('Sensor: Photoresistor GL5516')
-print('   Intensidad luminica = {0:0.2f} %'.format(ldr.value))
+print('   Intensidad luminica = {0:0.2f} %'.format(photores))
 # Obteniendo los datos en la variables para enviar a Carriots
-photores = ldr.value
+# photores = ldr.value
 
 # Sensor: BMP180 
 # Obteniendo los datos en la variables para enviar a Carriots
