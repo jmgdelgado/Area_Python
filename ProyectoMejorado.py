@@ -44,11 +44,10 @@ print ('   Humidity: {0:0.1f} %'.format(dht_humid))
 
 
 # Sensor: Sensor de lluvia. Rain sensor
-# GPIO.setmode(GPIO.BCM)
 entrada_sensor = 12
-# GPIO.setup(entrada_sensor,GPIO.IN)
 
 input_state = sensorLluvia.llueve(entrada_sensor)
+
 if input_state == False:
         estado_lluvia = 'Lluvia'
 else:
@@ -72,7 +71,7 @@ datos = dict(
 f = carriots.postDataCarriots(datos) 
 
 
-#Print in a pretty way
+# Respuesta a la peticion de POST. Print in a pretty way
 data=json.loads(f.read().decode('utf-8'))
 print(json.dumps(data,indent=4,sort_keys=True))
     
